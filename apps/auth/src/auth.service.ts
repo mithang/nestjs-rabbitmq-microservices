@@ -28,14 +28,14 @@ export class AuthService {
     const token = this.jwtService.sign(tokenPayload);
 
     response.cookie('Authentication', token, {
-      httpOnly: true,
+      httpOnly: false,
       expires,
     });
   }
 
   logout(response: Response) {
     response.cookie('Authentication', '', {
-      httpOnly: true,
+      httpOnly: false,
       expires: new Date(),
     });
   }

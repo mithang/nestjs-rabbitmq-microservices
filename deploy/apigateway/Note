@@ -1,0 +1,28 @@
+1. Cai dat kong ce
+B1: docker-compose up --build
+B2: curl -i http://localhost:8001
+B3: http://localhost:1337 
+
+Chu y: Cho doi vai phut de no start he thong, luc dau co bao khong truy cap dc database...
+
+2. Dang ky mot website(sevice) vao service kong
+https://konghq.com/blog/kong-gateway-key-authentication/
+https://www.itblognote.com/2020/06/kong-konga-with-docker-compose.html
+
+
+3. Nếu kong admin(localhost:1337) không chấp nhận localhost:8001 thì dùng http://host.docker.internal:8001/
+
+Luu y: 
+- Port 8000: Cung cap api cho end user su dung
+- Port 8001: Chua kong admin, tuong tac tao service, route, cumsomer
+- Port 1337: UI tuong tac voi kong va admin kong, nhu crud service va route
+4. Chu y khi dang ky service vao kong khong duoc de localhost, 127.0.0.1 ma thay vao do la host server,
+hoac co the host local nhung o dang: 192.168....
+
+5. Nguyen tac su dung:
+- Dang ky service
+- Dang ky route, sau buoc nay la oki, neu muon authen nguoi su dung api thi cai tiep
+- Kich hoat dung route o tren phai authen
+- Tao mot customer su dung route
+- Tao mot x-api-key cho customer
+

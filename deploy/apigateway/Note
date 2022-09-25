@@ -8,6 +8,7 @@ Chu y: Cho doi vai phut de no start he thong, luc dau co bao khong truy cap dc d
 2. Dang ky mot website(sevice) vao service kong
 https://konghq.com/blog/kong-gateway-key-authentication/
 https://www.itblognote.com/2020/06/kong-konga-with-docker-compose.html
+https://viblo.asia/p/huong-dan-su-dung-hoi-chi-tiet-kong-api-gateway-de-can-bang-tai-va-dieu-huong-requests-trong-he-thong-microservices-bJzKmwqOl9N
 
 
 3. Nếu kong admin(localhost:1337) không chấp nhận localhost:8001 thì dùng http://host.docker.internal:8001/
@@ -18,6 +19,11 @@ Luu y:
 - Port 1337: UI tuong tac voi kong va admin kong, nhu crud service va route
 4. Chu y khi dang ky service vao kong khong duoc de localhost, 127.0.0.1 ma thay vao do la host server,
 hoac co the host local nhung o dang: 192.168....
+Chay tren mac:
+- docker.for.mac.localhost:port
+Chay tren window: 
+- shost.docker.internal:port
+
 
 5. Nguyen tac su dung:
 - Dang ky service
@@ -26,3 +32,6 @@ hoac co the host local nhung o dang: 192.168....
 - Tao mot customer su dung route
 - Tao mot x-api-key cho customer
 
+Mot so loi: schema violation (must set one of 'methods', 'hosts', 'headers', 'paths' when 'protocols' is 'http')
+=> Do chua enter khi nhap gia tri vao paths
+Neu muon de route cua kong giong voi sever upstream thi set strip_path=NO

@@ -6,6 +6,7 @@ import { OrdersModule } from './orders.module';
 async function bootstrap() {
   const app = await NestFactory.create(OrdersModule);
   app.useGlobalPipes(new ValidationPipe());
+  app.setGlobalPrefix("api");
   const configService = app.get(ConfigService);
   await app.listen(configService.get('PORT'));
 }

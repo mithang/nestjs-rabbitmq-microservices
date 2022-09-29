@@ -17,12 +17,14 @@ export class JwtAuthGuard implements CanActivate {
     context: ExecutionContext,
   ): boolean | Promise<boolean> | Observable<boolean> {
     const authentication = this.getAuthentication(context);
+  
     return this.authClient
       .send('validate_user', {
         Authentication: authentication,
       })
       .pipe(
         tap((res) => {
+          
           this.addUser(res, context);
         }),
         catchError(() => {
@@ -33,18 +35,23 @@ export class JwtAuthGuard implements CanActivate {
 
   private getAuthentication(context: ExecutionContext) {
     let authentication: string;
+   
     if (context.getType() === 'rpc') {
       authentication = context.switchToRpc().getData().Authentication;
     } else if (context.getType() === 'http') {
-      authentication = context.switchToHttp().getRequest()
-        .cookies?.Authentication;
+      //get token from cookies
+      // authentication = context.switchToHttp().getRequest()
+      //   .cookies?.Authentication;
+      // console.log(context.switchToHttp().getRequest()?.headers?.authorization);
+      //get token from bearer
+      authentication = context.switchToHttp().getRequest()?.headers?.authorization;
     }
     if (!authentication) {
       throw new UnauthorizedException(
         'No value was provided for Authentication',
       );
     }
-    return authentication;
+    return authentication.replace('Bearer ', '').replace('bearer ', '');
   }
 
   private addUser(user: any, context: ExecutionContext) {

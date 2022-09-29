@@ -13,11 +13,20 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
     private readonly usersService: UsersService,
   ) {
     super({
+      //Get token from cookie => Cookie: "Authentication=eyJhbGciOiJIUzI1Ni...""
+      // jwtFromRequest: ExtractJwt.fromExtractors([
+      //   (request: any) => {
+      //     return request?.Authentication;
+      //   },
+      // ]),
+      //get token from bearer => Authentication: "bearer eyJhbGciOiJIUzI1Ni"
+      // jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
       jwtFromRequest: ExtractJwt.fromExtractors([
         (request: any) => {
           return request?.Authentication;
         },
       ]),
+      // ignoreExpiration: false,
       secretOrKey: configService.get('JWT_SECRET'),
     });
   }

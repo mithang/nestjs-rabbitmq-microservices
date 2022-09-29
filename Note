@@ -11,6 +11,9 @@ yarn start:dev auth
 - Khi tạo đơn hàng sẽ bắng event đến rabbitmq, rabbitmq sẽ đẩy cho billing và log ra
 5. Tất cả service chỉ authority một service auth
 https://dev.to/alesanchez/building-authentication-for-microservices-using-nestjs-1fne
+6. Tong hop source nestjs
+https://github.com/nestjs/nest/tree/master/sample
+
 
 
 

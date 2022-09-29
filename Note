@@ -13,7 +13,7 @@ yarn start:dev auth
 https://dev.to/alesanchez/building-authentication-for-microservices-using-nestjs-1fne
 6. Tong hop source nestjs
 https://github.com/nestjs/nest/tree/master/sample
-
+7. Mo ta field trong swagger nen dat trong dto nhung field dang dung class-validator
 
 
 

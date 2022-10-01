@@ -1,3 +1,11 @@
+1. Tao ung dung chinh hoac solution:
+nest new project_name
+2. Tao mot ung dung trong solution
+cd project_name && nest g app app_name
+Ghi chu: 
+- Khi tao app trong solution thi nest se folder lai project theo cau truc nhieu app
+- Tat ca app dung chung mot node_modules
+
 1. Hiện tại docker chạy bị sai nên phải chạy manual
 yarn start:dev orders
 yarn start:dev billing
@@ -14,6 +22,11 @@ https://dev.to/alesanchez/building-authentication-for-microservices-using-nestjs
 6. Tong hop source nestjs
 https://github.com/nestjs/nest/tree/master/sample
 7. Mo ta field trong swagger nen dat trong dto nhung field dang dung class-validator
-
+8. Tim hieu consul, ocelot
+9. Các công cụ test performace api microservices:  
+- apache bench
+- loadtest
+- artillery
+- ws-benchmark
 
 
